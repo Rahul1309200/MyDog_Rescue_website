@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN Day Event Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FAF5F5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .header {
+            background-color: #FF758C;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 25px;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #FF758C;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: #FF658C;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+          <li><a href="/home" class="nav-link">HOME</a></li>
+          <li class="dropdown">
+            <a href="#clubs" class="nav-link">CLUBS</a>
+            <ul class="dropdown-menu">
+              <li class="nested-dropdown">
+                <a href="#">C2S2</a>
+                <ul class="nested-menu">
+                  <li><a href="/Panache">Panache</a></li>
+                  <li><a href="/Custody">Custody </a></li>
+                  <li><a href="/NatSamrat">Nat Samrat</a></li>
+                  <li><a href="/Reflection">Reflection</a></li>
+                  <li><a href="/Tasveer">Tasveer</a></li>
+                  <li><a href="/Dhwani">Dhwani</a></li>
+                  <li><a href="/TBR">The Bhangra Regiment</a></li>
+                  <li><a href="/Lit">Literayllis</a></li>
+                  <li><a href="/Natraj">Natraj</a></li>
+                  <li><a href="/LGS">Lethal Gidda Squad</a></li>
+                </ul>
+              </li>
+              <li class="nested-dropdown">
+                <a href="#">Technical</a>
+                <ul class="nested-menu">
+                  <li><a href="#">IEEE</a></li>
+                  <li><a href="#">Coding Ninjas</a></li>
+                  <li><a href="#">ACM</a></li>
+                  <li><a href="#">Coding Blocks</a></li>
+                  <li><a href="#">DICE</a></li>
+                </ul>
+              </li>
+              <li class="nested-dropdown">
+                <a href="#">Sports</a>
+                <ul class="nested-menu">
+                  <li><a href="#">Football Club</a></li>
+                  <li><a href="#">Cricket Club</a></li>
+                  <li><a href="#">Basketball Club</a></li>
+                  <li><a href="#">Tennis Club</a></li>
+                  <li><a href="#">Swimming Club</a></li>
+                </ul>
+              </li>
+              <li class="nested-dropdown">
+                <a href="#">Extra-Curriculars</a>
+                <ul class="nested-menu">
+                  <li><a href="#">DebSoc</a></li>
+                  <li><a href="#">Book Club</a></li>
+                  <li><a href="#">NSS</a></li>
+                  <li><a href="#">NCC</a></li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/events" class="nav-link">EVENTS</a></li>
+          <li><a href="/contact" class="nav-link">CONTACT US</a></li>
+          <li><a href="/about" class="nav-link">ABOUT US</a></li>
+        </ul>
+      </nav>
+    
+      <!-- Include your JavaScript -->
+     
+    <div class="header">
+        <h1>Annual Photography Event</h1>
+        <h>Organised by-Neelam mam</h>
+    </div>
+
+    <div class="gallery-container">
+        <!-- Gallery Images for the Event -->
+        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/13039479/pexels-photo-13039479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/5730452/pexels-photo-5730452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/13464795/pexels-photo-13464795.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');"></div>
+        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/16118511/pexels-photo-16118511/free-photo-of-a-large-display-of-flowers-at-a-market.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/10429081/pexels-photo-10429081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+        <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/11876860/pexels-photo-11876860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
+
+    </div>
+
+    <a href="tasveer.html" class="back-btn">Back to Events</a>
+    <script src="navbar.js"></script>
+</body>
+</html>

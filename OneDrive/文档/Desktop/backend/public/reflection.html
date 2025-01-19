@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUrrents - Tasveer Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAF5F5;
+            color: #2F2F2F;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #FF758C, #FF7EB3);
+        }
+
+        .slideshow-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            letter-spacing: 3px;
+        }
+
+        /* Club Info */
+        .club-info {
+            padding: 30px 20px;
+            background-color: #FFF7F8;
+            text-align: center;
+        }
+
+        .club-info h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #FF658C;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .club-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Upcoming Events */
+        .club-inf {
+            padding: 70px 70px;
+            background: #FFECF1;
+            text-align: center;
+        }
+
+        .club-inf h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #FF658C;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            justify-items: center;
+        }
+
+        .event-item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 12px;
+            position: relative;
+            height: 350px;
+            width: 320px;
+            color: white;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .event-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .event-item:hover .event-overlay {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .event-overlay h3 {
+            font-size: 15px;
+            margin: 0 0 5px;
+            font-weight: bold;
+        }
+
+        .event-overlay p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* Past Events Section */
+        .past-events {
+            background: #D7A8A9;
+            padding: 70px 70px;
+            text-align: center;
+        }
+
+        .past-events h2 {
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #FF658C;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .past-event-item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            position: relative;
+            height: 300px;
+            width: 300px;
+            color: white;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .past-event-item:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .past-event-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .past-event-overlay h3 {
+            font-size: 18px;
+            margin: 0 0 5px;
+            font-weight: bold;
+        }
+
+        .past-event-overlay p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #FF7EB3, #FF758C);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+
+        .footer .social-icons a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: #FFD9E3;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-text {
+                font-size: 32px;
+            }
+
+            .club-info h2, .club-inf h2, .past-events h2 {
+                font-size: 28px;
+            }
+
+            .event-item, .past-event-item {
+                width: 90%;
+            }
+        }
+        /* Basic Reset */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+nav {
+  background: #1F1F1F; /* Transparent white */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky; /* Sticks to the top when scrolling */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 1em 0;
+}
+
+.navbar li {
+  margin: 0 30px;
+  position: relative; /* Required for dropdown positioning */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar a:hover {
+  transform: scale(1.1); /* Subtle scaling effect */
+  opacity: 0.8;
+}
+
+/* Dropdown Styles */
+.dropdown-menu,
+.nested-menu {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px); /* Frosted glass effect for dropdowns */
+  -webkit-backdrop-filter: blur(5px);
+  list-style: none;
+  padding: 10px 0;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu a,
+.nested-menu a {
+  color: #F7F2F3;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover,
+.nested-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover to Show Dropdown */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.nested-dropdown:hover > .nested-menu {
+  display: block;
+  left: 100%;
+  top: 0;
+}
+
+/* Underline Animation */
+.navbar a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #A51232;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+.navbar a.active::before {
+  width: 100%;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+    * {
+      font-family: Open Sans;
+    }
+    
+    footer{
+        margin-top: 60px;
+    }
+    
+    .footer-distributed{
+      background: #1F1F1F;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 55px 50px;
+    }
+    
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+    /* Footer left */
+    
+    .footer-left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+}
+
+.footer-logo {
+    max-width: 100%; /* Ensures the logo is responsive */
+    height: auto; /* Maintains the aspect ratio */
+    margin-bottom: 10px; /* Adds some space below the logo */
+}
+
+    
+    /* The company logo */
+    
+    .footer-distributed h3{
+      color:  #ffffff;
+      font: normal 36px 'Open Sans', cursive;
+      margin: 0;
+    }
+    
+    .footer-distributed h3 span{
+      color:  #A51232;
+    }
+    
+    /* Footer links */
+    
+    .footer-distributed .footer-links{
+      color:  #F7F2F3;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+    
+    .footer-distributed .footer-links a{
+      display:inline-block;
+      line-height: 1.8;
+      font-weight:400;
+      text-decoration: none;
+      color:  inherit;
+    }
+    
+    .footer-distributed .footer-company-name{
+      color:  #222;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-distributed .footer-center{
+      width: 35%;
+    }
+    
+    .footer-distributed .footer-center i{
+      background-color:  #33383b;
+      color: #F7F2F3;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+    
+    .footer-distributed .footer-center i.fa-envelope{
+      font-size: 17px;
+      line-height: 38px;
+    }
+    
+    .footer-distributed .footer-center p{
+      display: inline-block;
+      color: #ffffff;
+      font-weight:400;
+      vertical-align: middle;
+      margin:0;
+    }
+    
+    .footer-distributed .footer-center p span{
+      display:block;
+      font-weight: normal;
+      font-size:14px;
+      line-height:2;
+    }
+    
+    .footer-distributed .footer-center p a{
+      color:  #A51232;
+      text-decoration: none;;
+    }
+    
+    .footer-distributed .footer-links a:before {
+      content: "|";
+      font-weight:300;
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+    
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+    
+    /* Footer Right */
+    
+    .footer-distributed .footer-right{
+      width: 20%;
+    }
+    
+    .footer-distributed .footer-company-about{
+      line-height: 20px;
+      color:  #92999f;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    .footer-distributed .footer-company-about span{
+      display: block;
+      color:  #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .footer-distributed .footer-icons{
+      margin-top: 25px;
+    }
+    
+    .footer-distributed .footer-icons a{
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color:  #33383b;
+      border-radius: 2px;
+    
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+    
+      margin-right: 3px;
+      margin-bottom: 5px;
+    }
+    
+    /* If you don't want the footer to be responsive, remove these media queries */
+    
+    @media (max-width: 880px) {
+    
+      .footer-distributed{
+        font: bold 14px sans-serif;
+      }
+    
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-center,
+      .footer-distributed .footer-right{
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+    
+      .footer-distributed .footer-center i{
+        margin-left: 0;
+      }
+    
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+          <li><a href="/homepage" class="nav-link">HOME</a></li>
+          <li class="dropdown">
+            <a href="#clubs" class="nav-link">CLUBS</a>
+            <ul class="dropdown-menu">
+              <li class="nested-dropdown">
+                <a href="#">C2S2</a>
+                <ul class="nested-menu">
+                  <li><a href="/Panache">Panache</a></li>
+                  <li><a href="/Custody">Custody </a></li>
+                  <li><a href="/NatSamrat">Nat Samrat</a></li>
+                  <li><a href="/Reflection">Reflection</a></li>
+                  <li><a href="/Tasveer">Tasveer</a></li>
+                  <li><a href="/Dhwani">Dhwani</a></li>
+                  <li><a href="/TBR">The Bhangra Regiment</a></li>
+                  <li><a href="/Lit">Literayllis</a></li>
+                  <li><a href="/Natraj">Natraj</a></li>
+                  <li><a href="/LGS">Lethal Gidda Squad</a></li>
+                </ul>
+              </li>
+              <li class="nested-dropdown">
+                <a href="#">Technical</a>
+                <ul class="nested-menu">
+                  <li><a href="#">IEEE</a></li>
+                  <li><a href="#">Coding Ninjas</a></li>
+                  <li><a href="#">ACM</a></li>
+                  <li><a href="#">Coding Blocks</a></li>
+                  <li><a href="#">DICE</a></li>
+                </ul>
+              </li>
+              <li class="nested-dropdown">
+                <a href="#">Sports</a>
+                <ul class="nested-menu">
+                  <li><a href="#">Football Club</a></li>
+                  <li><a href="#">Cricket Club</a></li>
+                  <li><a href="#">Basketball Club</a></li>
+                  <li><a href="#">Tennis Club</a></li>
+                  <li><a href="#">Swimming Club</a></li>
+                </ul>
+              </li>
+              <li class="nested-dropdown">
+                <a href="#">Extra-Curriculars</a>
+                <ul class="nested-menu">
+                  <li><a href="#">DebSoc</a></li>
+                  <li><a href="#">Book Club</a></li>
+                  <li><a href="#">NSS</a></li>
+                  <li><a href="#">NCC</a></li>
+                  
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/events" class="nav-link">EVENTS</a></li>
+          <li><a href="/contact-us" class="nav-link">CONTACT US</a></li>
+          <li><a href="/about" class="nav-link">ABOUT US</a></li>
+        </ul>
+      </nav>
+    
+      <!-- Include your JavaScript -->
+     
+    
+    <div class="header">
+        <div class="slideshow-container">
+            <img class="slides" src="https://images.pexels.com/photos/29848192/pexels-photo-29848192/free-photo-of-craftsman-creating-traditional-artwork-indoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+            <img class="slides" src="https://images.pexels.com/photos/4117257/pexels-photo-4117257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+            <img class="slides" src="https://images.pexels.com/photos/6167807/pexels-photo-6167807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+        </div>
+        <div class="header-overlay">
+            <div class="header-text">Reflection</div>
+        </div>
+    </div>
+
+    <div class="club-info">
+        <h2>About Reflection</h2>
+        <p>Reflection Club is the heart of creativity and craftsmanship at our college. From designing props and posters to crafting stunning decorations, we bring every event to life with artistic flair and dedication.</p>
+        <P>Heads- Diksha Bajaj, Alisha Vashisht</P>
+        <p>9876543201,9876812345</p>
+
+
+    </div>
+
+    <div class="club-inf">
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+            <div class="event-item" style="background-image: url('https://images.pexels.com/photos/3747314/pexels-photo-3747314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="event-overlay">
+                    <h3>Cultural Fest Decorations</h3>
+                    <p>Venue-Explore Stars</p>
+                    <p>Date-12 January-20 January 2025</p>
+                    <p><a href="https://forms.gle/eEkxJWzw9rKaPW3V9
+                        " class="register-link">Register</a></p>
+                </div>
+            </div>
+            <div class="event-item" style="background-image: url('https://images.pexels.com/photos/7963968/pexels-photo-7963968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="event-overlay">
+                    <h3>Shading Workshop</h3>
+                    <p>Venue-Tennis Court</p>
+                    <p>Date-15 January 2024</p>
+                    <p><a href="https://forms.gle/eEkxJWzw9rKaPW3V9
+                        " class="register-link">Register</a></p>
+                </div>
+            </div>
+            <div class="event-item" style="background-image: url('https://i.pinimg.com/originals/35/fc/32/35fc32e3b0d194c6a5b99114c4cb4165.jpg');">
+                <div class="event-overlay">
+                    <h3>Independence Day Decoration</h3>
+                    <p>Venue-Explotorium</p>
+                    <p>Date-22 January 2025</p>
+                    <p><a href="https://forms.gle/eEkxJWzw9rKaPW3V9
+                        " class="register-link">Register</a></p>
+                </div>
+            </div>
+            <div class="event-item" style="background-image: url('https://images.pexels.com/photos/18376977/pexels-photo-18376977/free-photo-of-women-sitting-with-candles-and-painting-on-pavement.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="event-overlay">
+                    <h3>Rangoli Competition</h3>
+                    <p>Venue-Explotorium</p>
+                    <p>Date-25 January 2025</p>
+                    <p><a href="https://forms.gle/eEkxJWzw9rKaPW3V9
+                        " class="register-link">Register</a></p>
+                </div>
+            </div>        </div>
+    </div>
+
+    <!-- Past Events Section -->
+    <div class="past-events">
+        <h2>Past Events</h2>
+        <div class="event-list">
+            <div class="event-item" style="background-image: url('https://images.pexels.com/photos/159644/art-supplies-brushes-rulers-scissors-159644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="event-overlay">
+                    <h3>Creative Craft Workshop</h3>
+                    <p>Venue-Explore Stars</p>
+                    <p>Date-29 September 2024</p>
+                    <p><a href="undaygallry.html" class="register-link">View Gallery</a></p>
+
+                </div>
+            </div>
+            
+            <div class="past-event-item" style="background-image: url('https://images.pexels.com/photos/2938195/pexels-photo-2938195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="past-event-overlay">
+                    <h3>Wall Mural Painting</h3>
+                    <p>Venue-Art Gallery</p>
+                    <p>Date-5 November 2024</p>
+                    <p><a href="anl-phtgrphy-event.html" class="register-link">View Gallery</a></p>
+
+                </div>
+            </div>
+            <div class="past-event-item" style="background-image: url('https://images.pexels.com/photos/7686281/pexels-photo-7686281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="past-event-overlay">
+                    <h3>Diwali Event</h3>
+                    <p>Venue-Zero Ground Stage</p>
+                    <p>Date-9 November 2024</p>
+                    <p><a href="diwaligallery.html" class="register-link">View Gallery</a></p>
+
+                </div>
+            </div>        </div>
+    </div>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img src="chitkara logo.png" alt="Company Logo" class="footer-logo">
+            <p class="footer-links">
+                <a href="/homepage" class="link-1">Home</a>
+                <a href="/CLUBS">Clubs</a>
+                
+                <a href="/about">About</a>
+                <a href="/faq">Faq</a>
+                <a href="/contact-us">Contact</a>
+            </p>
+        </div>
+        
+    
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Chitkara University</span> Rajpura, Punjab</p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+91-8570893065</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">cuietcurrents@gmail.com</a></p>
+          </div>
+        </div>
+    
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span>About the company</span>
+            Created with the vision of keeping students informed about everything happening across the campus, all in one place.
+          </p>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        
+        </div>
+      </footer>
+    <script src="navbar.js"></script>
+    <script>
+         
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slides');
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 2000);
+        }
+
+        showSlides();
+
+        // Select all navigation links
+const navLinks = document.querySelectorAll(".nav-link");
+
+// Add click event listener to each link
+navLinks.forEach(link => {
+  link.addEventListener("click", function () {
+    // Remove the 'active' class from all links
+    navLinks.forEach(nav => nav.classList.remove("active"));
+    // Add the 'active' class to the clicked link
+    this.classList.add("active");
+  });
+});
+
+    </script>
+
+</body>
+</html>
