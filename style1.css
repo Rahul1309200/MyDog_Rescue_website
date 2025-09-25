@@ -1,0 +1,136 @@
+/* Reset margin and padding for cleaner look */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the whole page */
+body {
+    font-family: Arial, sans-serif;
+    /* clean readable font */
+    line-height: 1.6;
+    /* spacing between lines */
+    background-color: #fefefe;
+    /* light background */
+    color: #333;
+    /* dark text */
+}
+
+/* Navigation bar styles */
+header {
+    background: #ff914d;
+    /* orange color for friendly feel */
+    color: white;
+    /* top/bottom, left/right padding */
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    /* space between links */
+    text-decoration: none;
+    /* remove underline */
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    /* highlight when hovered */
+}
+
+/* Hero section with image and message */
+.hero {
+    background: url('image.png') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    /* horizontally center */
+    align-items: center;
+    /* vertically center */
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    background: rgba(0, 0, 0, 0.5);
+    /* dark overlay for readability */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* About section */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+}
+.dogs-container {
+    display: flex;               /* Arrange dog cards in a row */
+    flex-wrap: wrap;             /* Wrap to next line if too many */
+    justify-content: center;     /* Center the row */
+    gap: 20px;                   /* Space between cards */
+    margin: 30px 0;
+}
+
+.dog-card {
+    background: #fff;            /* White card */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    overflow: hidden;            /* Clips the image rounded corners */
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.dog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;           /* Ensure image covers area without distortion */
+}
+
+.dog-card h3 {
+    margin: 10px 0 5px 0;
+    color: #ff914d;
+}
+
+.dog-card p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 10px 10px 10px;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover for effect */
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff914d;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #e66a00;
+    /* darker orange when hovered */
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
