@@ -77,7 +77,6 @@ nav a:hover {
     gap: 20px;                   /* Space between cards */
     margin: 30px 0;
 }
-
 .dog-card {
     background: #fff;            /* White card */
     border-radius: 10px;
@@ -93,7 +92,6 @@ nav a:hover {
     height: 200px;
     object-fit: cover;           /* Ensure image covers area without distortion */
 }
-
 .dog-card h3 {
     margin: 10px 0 5px 0;
     color: #ff914d;
@@ -108,8 +106,6 @@ nav a:hover {
 .dog-card:hover {
     transform: translateY(-5px); /* Slight lift on hover for effect */
 }
-
-
 /* Buttons */
 .btn {
     display: inline-block;
@@ -125,7 +121,6 @@ nav a:hover {
     background: #e66a00;
     /* darker orange when hovered */
 }
-
 /* Footer */
 footer {
     background: #333;
