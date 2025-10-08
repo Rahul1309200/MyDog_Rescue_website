@@ -9,7 +9,6 @@ A website for dog adoption and rescue.
 
 ## Tech Stack
 - HTML / CSS / JavaScript
-- [Add frameworks if you use any]
 
 ## Setup
 ```bash
