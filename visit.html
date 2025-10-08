@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Visit</title>
+    <link rel="stylesheet" href="style1.css"> <!-- main CSS -->
+    <link rel="stylesheet" href="visit1.css">  <!-- new form CSS -->
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>🐶 PawSafe</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="visit.html">Visit</a>
+            <a href="#">Donate</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- VISIT FORM -->
+    <section class="visit">
+        <h2>Book a Visit to Meet Our Dogs</h2>
+        <form id="visitForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit" class="btn">Book Visit</button>
+        </form>
+
+        <p id="formStatus" style="margin-top: 10px;"></p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Dog Rescue Center | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Simple JS to handle form submission
+        const visitForm = document.getElementById('visitForm');
+        const visitStatus = document.getElementById('formStatus');
+
+        visitForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = visitForm.name.value;
+            const email = visitForm.email.value;
+            const date = visitForm.date.value;
+            const time = visitForm.time.value;
+
+            visitStatus.textContent = `Thank you ${name}! Your visit is booked on ${date} at ${time}.`;
+            visitStatus.style.color = "green";
+
+            visitForm.reset();
+        });
+    </script>
+</body>
+
+</html>

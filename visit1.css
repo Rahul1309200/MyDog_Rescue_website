@@ -1,0 +1,62 @@
+/* visit.css */
+
+.visit {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.visit h2 {
+    color: #ff914d;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.visit form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 15px;
+    text-align: left;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.visit input,
+.visit textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.visit label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.visit button {
+    padding: 12px;
+    background: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.visit button:hover {
+    background: #e66a00;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .visit form {
+        padding: 20px;
+    }
+}

@@ -2,68 +2,46 @@
 <html lang="en">
 
 <head>
-    <!-- Sets character encoding so all symbols and emojis display properly -->
     <meta charset="UTF-8">
-
-    <!-- Makes the website responsive on phones/tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title shown in browser tab -->
     <title>Dog Rescue Home</title>
     <link rel="stylesheet" href="style1.css">
-    <!-- Basic CSS styling -->
 </head>
 
 <body>
-    <!-- HEADER -->
     <header>
-        <h1>🐶PawSafe</h1>
+        <h1>🐶 PawSafe</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Adopt</a>
+            <a href="index.html">Home</a>
+            <a href="visit.html">Visit</a>
             <a href="#">Donate</a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <h2>Find Your Best Friend Today ❤️</h2>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section class="about">
         <h2>About Us</h2>
         <p>
             Welcome to our Dog Rescue Center. We provide shelter and love to stray
             and abandoned dogs until they find their forever homes.
         </p>
-        <div class="dogs-container">
-            <!-- Example dog card -->
-            <div class="dog-card">
-                <img src="image.png" alt="Dog 1">
-                <h3>Buddy</h3>
-                <p>2 years old, Friendly and playful</p>
-        </div>      
-        <div class="dog-card">
-            <img src="image.png" alt="Dog 2">
-            <h3>Luna</h3>
-            <p>1 year old, Loves kids and walks</p>
-        </div>
-        
-        <div class="dog-card">
-            <img src="image.png" alt="Dog 3">
-            <h3>Charlie</h3>
-            <p>3 years old, Calm and affectionate</p>
-        </div>
-    </div>  
-    <a href="#" class="btn">Adopt Now</a>
+
+        <!-- Empty container; JS will fill it -->
+        <div class="dogs-container"></div>
+
+        <a href="visit.html" class="btn">Adopt Now</a>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Dog Rescue Center | All Rights Reserved</p>
     </footer>
+
+    <!-- External JS file -->
+    <script src="script1.js"></script>
 </body>
 
 </html>
