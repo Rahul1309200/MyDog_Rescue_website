@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Stray Dog | PawSafe</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+
+    <header>
+        <h1>🐶 PawSafe</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="visit.html">Visit</a>
+            <a href="#">Donate</a>
+            <a href="#">Contact</a>
+            <a href="report.html">Report</a>
+        </nav>
+    </header>
+
+    <section class="report">
+        <h2>Report a Stray Dog 🐾</h2>
+        <p>Help us rescue dogs in need by submitting a report below.</p>
+
+        <form class="report-form" id="reportForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Contact Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Dog's Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter where you found the dog" required>
+            </div>
+
+            <div class="form-group">
+                <label for="condition">Dog's Condition</label>
+                <select id="condition" name="condition" required>
+                    <option value="">Select Condition</option>
+                    <option value="healthy">Seems Healthy</option>
+                    <option value="injured">Injured</option>
+                    <option value="malnourished">Malnourished</option>
+                    <option value="aggressive">Aggressive</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Upload a Photo (optional)</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Additional Details</label>
+                <textarea id="description" name="description" rows="4" placeholder="Describe the situation..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit Report</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dog Rescue Center | All Rights Reserved</p>
+    </footer>
+
+    <script src="report.js"></script>
+</body>
+</html>
