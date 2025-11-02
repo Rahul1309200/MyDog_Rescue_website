@@ -22,7 +22,7 @@
 /* Cards Container */
 .donation-cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 25px;
   max-width: 1000px;

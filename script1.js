@@ -1,5 +1,5 @@
   // Function that returns a Promise to fetch dogs
-  function fetchDogs() {
+function fetchDogs() {
     return new Promise((resolve, reject) => {
       fetch('dogs.json')
         .then(response => {
@@ -13,7 +13,7 @@
     });
   }
 
-  // Once the page loads
+// On DOM load, fetch dogs and display them
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.dogs-container');
 
