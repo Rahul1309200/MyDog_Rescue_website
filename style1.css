@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@ nav a:hover {
 .hero {
     background: url('https://media.4-paws.org/4/c/f/5/4cf55c6a98b590e90d5525368fda5ae64f5a1677/VIER%20PFOTEN_2021-10-12_00048-2569x1778-1920x1329.jpg')
         no-repeat center top/cover;
-    height: 450px; /* slightly taller for better composition */
+    height: 450px; 
     display: flex;
     justify-content: center;
     align-items: center;

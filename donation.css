@@ -19,7 +19,7 @@
   line-height: 1.5;
 }
 
-/* Card Container */
+/* Cards Container */
 .donation-cards {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +29,7 @@
   margin: 0 auto;
 }
 
-/* Each Card */
+/* Individual Card */
 .donation-card {
   background: #fff;
   padding: 25px 20px;
